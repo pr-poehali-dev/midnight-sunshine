@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import Icon from "@/components/ui/icon"
 import { useNavigate } from "react-router-dom"
+import { saveUser } from "@/lib/auth"
 
 type Plan = "free" | "pro"
 
@@ -57,6 +58,7 @@ export default function Register() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+    saveUser({ name, email, plan: selectedPlan })
     navigate("/")
   }
 
@@ -66,7 +68,7 @@ export default function Register() {
         {/* Logo */}
         <div className="text-center mb-10">
           <h1 className="font-orbitron text-2xl font-bold text-white cursor-pointer" onClick={() => navigate("/")}>
-            Lingua<span className="text-red-500">AI</span>
+            Samurai<span className="text-red-500">LanguageAI</span>
           </h1>
         </div>
 

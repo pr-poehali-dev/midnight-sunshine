@@ -1,11 +1,24 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import { useNavigate } from "react-router-dom"
+import { getUser, logout, type User } from "@/lib/auth"
+import Icon from "@/components/ui/icon"
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const [user, setUser] = useState<User | null>(null)
   const navigate = useNavigate()
+
+  useEffect(() => {
+    setUser(getUser())
+  }, [])
+
+  const handleLogout = () => {
+    logout()
+    setUser(null)
+    navigate("/")
+  }
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-[9999] bg-black/95 backdrop-blur-md border-b border-red-500/20">
@@ -36,9 +49,26 @@ export function Navbar() {
             </div>
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
-            <Button onClick={() => navigate("/register")} className="bg-red-500 hover:bg-red-600 text-white font-geist border-0">Начать бесплатно</Button>
+          {/* CTA Buttons */}
+          <div className="hidden md:flex items-center gap-3">
+            {user ? (
+              <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2 text-white">
+                  <Icon name="User" size={16} className="text-red-400" />
+                  <span className="font-geist text-sm">{user.name}</span>
+                </div>
+                <Button onClick={handleLogout} variant="outline" className="border-red-500/50 text-red-400 hover:bg-red-500 hover:text-white font-geist h-9 px-4 bg-transparent">
+                  Выйти
+                </Button>
+              </div>
+            ) : (
+              <>
+                <Button onClick={() => navigate("/login")} variant="outline" className="border-white/20 text-white hover:bg-white/10 font-geist h-9 px-4 bg-transparent">
+                  Войти
+                </Button>
+                <Button onClick={() => navigate("/register")} className="bg-red-500 hover:bg-red-600 text-white font-geist border-0">Начать бесплатно</Button>
+              </>
+            )}
           </div>
 
           {/* Mobile menu button */}
@@ -77,10 +107,24 @@ export function Navbar() {
               >
                 Вопросы
               </a>
-              <div className="px-3 py-2">
-                <Button onClick={() => navigate("/register")} className="w-full bg-red-500 hover:bg-red-600 text-white font-geist border-0">
-                  Начать бесплатно
-                </Button>
+              <div className="px-3 py-2 space-y-2">
+                {user ? (
+                  <>
+                    <p className="text-gray-400 text-sm px-1">Вы вошли как <span className="text-white">{user.name}</span></p>
+                    <Button onClick={handleLogout} className="w-full border-red-500/50 text-red-400 hover:bg-red-500 hover:text-white font-geist bg-transparent border">
+                      Выйти
+                    </Button>
+                  </>
+                ) : (
+                  <>
+                    <Button onClick={() => { navigate("/login"); setIsOpen(false) }} className="w-full border-white/20 text-white hover:bg-white/10 font-geist bg-transparent border">
+                      Войти
+                    </Button>
+                    <Button onClick={() => { navigate("/register"); setIsOpen(false) }} className="w-full bg-red-500 hover:bg-red-600 text-white font-geist border-0">
+                      Начать бесплатно
+                    </Button>
+                  </>
+                )}
               </div>
             </div>
           </div>
