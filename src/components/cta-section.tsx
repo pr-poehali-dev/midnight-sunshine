@@ -7,8 +7,8 @@ export function CTASection() {
     <section className="py-24 px-6 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10">
       <div className="max-w-4xl mx-auto text-center">
         <div className="slide-up">
-          <h2 className="text-5xl font-bold text-foreground mb-6 font-sans text-balance">Начни говорить на новом языке уже сегодня</h2>
-          <p className="text-xl text-muted-foreground mb-10 leading-relaxed max-w-2xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6 font-sans text-balance">Начни говорить на новом языке уже сегодня</h2>
+          <p className="text-base sm:text-xl text-muted-foreground mb-10 leading-relaxed max-w-2xl mx-auto">
             Присоединяйтесь к более чем 500 000 учеников, которые уже учат языки с Lingua AI.
             Первый урок — бесплатно. Без кредитной карты.
           </p>

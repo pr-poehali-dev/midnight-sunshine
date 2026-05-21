@@ -30,8 +30,8 @@ export function TestimonialsSection() {
     <section className="py-24 px-6 bg-card">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-card-foreground mb-4 font-sans">Истории успеха</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <h2 className="text-3xl sm:text-4xl font-bold text-card-foreground mb-4 font-sans">Истории успеха</h2>
+          <p className="text-base sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Тысячи людей уже достигли своих языковых целей с Lingua AI
           </p>
         </div>
