@@ -49,7 +49,7 @@ export function Navbar() {
             </div>
           </div>
 
-          {/* CTA Buttons */}
+          {/* CTA Buttons — desktop */}
           <div className="hidden md:flex items-center gap-3">
             {user ? (
               <div className="flex items-center gap-3">
@@ -71,11 +71,25 @@ export function Navbar() {
             )}
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
+          {/* CTA Buttons — mobile (всегда видны) */}
+          <div className="flex md:hidden items-center gap-2">
+            {user ? (
+              <Button onClick={handleLogout} size="sm" variant="outline" className="border-red-500/50 text-red-400 hover:bg-red-500 hover:text-white font-geist bg-transparent text-xs px-3">
+                Выйти
+              </Button>
+            ) : (
+              <>
+                <Button onClick={() => navigate("/login")} size="sm" variant="outline" className="border-white/20 text-white hover:bg-white/10 font-geist bg-transparent text-xs px-3">
+                  Войти
+                </Button>
+                <Button onClick={() => navigate("/register")} size="sm" className="bg-red-500 hover:bg-red-600 text-white font-geist border-0 text-xs px-3">
+                  Бесплатно
+                </Button>
+              </>
+            )}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-white hover:text-red-500 transition-colors duration-200"
+              className="text-white hover:text-red-500 transition-colors duration-200 ml-1"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
