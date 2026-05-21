@@ -63,10 +63,10 @@ export function Navbar() {
               </div>
             ) : (
               <>
-                <Button onClick={() => navigate("/login")} variant="outline" className="border-white/20 text-white hover:bg-white/10 font-geist h-9 px-4 bg-transparent">
+                <Button onClick={() => navigate("/login")} className="border-2 border-red-500 text-red-500 bg-transparent hover:bg-red-500 hover:text-white font-geist h-10 px-5 font-semibold">
                   Войти
                 </Button>
-                <Button onClick={() => navigate("/register")} className="bg-red-500 hover:bg-red-600 text-white font-geist border-0">Начать бесплатно</Button>
+                <Button onClick={() => navigate("/register")} className="bg-red-500 hover:bg-red-600 text-white font-geist border-0 h-10 px-5 font-semibold">Начать бесплатно</Button>
               </>
             )}
           </div>
