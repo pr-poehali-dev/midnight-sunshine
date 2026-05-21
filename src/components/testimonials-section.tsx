@@ -3,25 +3,25 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 const testimonials = [
   {
-    name: "Елена Родригес",
-    role: "Директор по нейронауке, Quantum Dynamics",
-    avatar: "/professional-woman-scientist.png",
-    content:
-      "SynapseAI изменил наш подход к нейрореабилитации. Результаты пациентов улучшились на 340% после внедрения.",
-  },
-  {
-    name: "Маркус Уильямс",
-    role: "Руководитель исследований, Stellar Analytics",
-    avatar: "/cybersecurity-expert-man.jpg",
-    content:
-      "Точность и протоколы безопасности не имеют аналогов. Мы значительно ускорили клинические испытания с платформой SynapseAI.",
-  },
-  {
-    name: "Анна Ковальски",
-    role: "Вице-президент по разработке, Nova Industries",
+    name: "Анна К.",
+    role: "Студентка, 22 года",
     avatar: "/asian-woman-tech-developer.jpg",
     content:
-      "Интеграция прошла безупречно. Адаптивные алгоритмы понимают намерения пользователя лучше любой системы, что мы тестировали.",
+      "За 3 месяца с Lingua AI я сдала IELTS на 7.5! AI-репетитор выявил мои слабые места и работал именно над ними. Это просто магия.",
+  },
+  {
+    name: "Михаил Р.",
+    role: "Менеджер по продажам, 35 лет",
+    avatar: "/cybersecurity-expert-man.jpg",
+    content:
+      "Начал с нуля, а через полгода веду переговоры с иностранными партнёрами на английском. 15 минут в день — и результат налицо.",
+  },
+  {
+    name: "Ольга С.",
+    role: "Преподаватель, 48 лет",
+    avatar: "/professional-woman-scientist.png",
+    content:
+      "Думала, что в моём возрасте уже поздно. Но интерфейс такой интуитивный, что я освоила его за день. Теперь учу французский с удовольствием!",
   },
 ]
 
@@ -30,9 +30,9 @@ export function TestimonialsSection() {
     <section className="py-24 px-6 bg-card">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-card-foreground mb-4 font-sans">Нам доверяют лидеры</h2>
+          <h2 className="text-4xl font-bold text-card-foreground mb-4 font-sans">Истории успеха</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Что говорят лидеры индустрии о нашей революционной технологии
+            Тысячи людей уже достигли своих языковых целей с Lingua AI
           </p>
         </div>
 
